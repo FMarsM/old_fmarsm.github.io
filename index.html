@@ -29,10 +29,26 @@ font-style: italic;
     <p  class="s1">Текст проверка<br>Проверка разрыва строки<br><i><strong>Жирный курсив</strong><br>Просто курсив</i></p>
     <input type="text" id="UserInput">
     <button id="button1">Введите степень треугольника</button>
-    <ul id="ul1"></ul>
+    <canvas height='320' width='480' id='pongfield'></canvas>
+    <script>
+        var pongfield = document.getElementById("pongfield"),
+			    ctx     = pongfield.getContext('2d');
+			ctx.height = 480;
+			ctx.width  = 640;
+/* 			ctx.fillStyle = '#000' */
+            /* ctx.fillRect(0,0,640,480) */
+            ctx.fillStyle = "rgv(30,100,200)"
+            ctx.strokeRect(100,100,50,50)
+                for (let x=0;x<1000;x++)
+            {
+                ctx.fillStyle = "rgb(30,100,200)"
+                ctx.fillRect(100+100*Math.sin(x),100+100*Math.cos(x),50,50)
+            }
+    </script>
 <script>
     button1.onclick = function func()
     {
+        div2.innerHTML=''
     let n = document.getElementById("UserInput").value;
     let cLine
     let allLines =''
@@ -58,9 +74,8 @@ font-style: italic;
             allLines = allLines+`\n${cLine}`
             divv.innerHTML=`${cLine}`;
             div2.append(divv)
-
         }
-        divv.innerHTML=''
+
         
     }
 
