@@ -1,14 +1,35 @@
+<style>
+    body{
+        background-image: url(https://kartinkin.net/uploads/posts/2021-01/1611023808_24-p-fon-iz-geometricheskikh-figur-43.jpg);
+        background-color: darkmagenta;
+        background-blend-mode:hard-light;
+    }
+    h1
+    {
+        color:darkcyan;
+        font-style: italic;
+        font-size: 48pt;
+
+    }
+    #div2{
+        font-weight: bold;
+        font-size: 16pt;
+        color:rgb(30, 66, 83);
+    }
+</style>
+<body>
 <div id="div1">
+    <h1>Вывод треугольника Паскаля</h1>
     <input type="text" id="UserInput">
     <button id="button1">Введите степень треугольника</button>
 <script>
+    
     button1.onclick = function func()
     {
         div2.innerHTML=''
     let n = document.getElementById("UserInput").value;
     let cLine
     let allLines =''
-
     for ( let y = 0; y < +n; y++)
         {
             let c = 1;
@@ -31,10 +52,9 @@
             divv.innerHTML=`${cLine}`;
             div2.append(divv)
         }
-
         
     }
-
 </script>
 <p1 id="div2" name="name"></p1>
 </div>
+</body>

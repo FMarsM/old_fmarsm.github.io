@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width = "1920" height = "1080" id="draw"></canvas>
+    <script>
+        let canvas = document.getElementById("draw")
+        cnvs = canvas.getContext('2d');
+        let drawstart = false;
+        let mouse =  {x:0,y:0};
+/*         let n = document.getElementById("UserInput").value; */
+         cnvs.lineWidth = 15;
+/*          cnvs.lineWidth = n; */
+        canvas.addEventListener("mousedown", function(e)
+        {
+            mouse.x = e.pageX - this.offsetLeft;
+            mouse.y = e.pageY - this.offsetTop;
+            drawstart = true;
+            cnvs.beginPath();
+            cnvs.moveTo(mouse.x, mouse.y);
+        })
+        canvas.addEventListener("mousemove", function(e){
+            if (drawstart==true){
+            mouse.x = e.pageX - this.offsetLeft;
+            mouse.y = e.pageY - this.offsetTop;
+            cnvs.lineTo(mouse.x,mouse.y);
+            cnvs.stroke();
+            }
+        } )
+        canvas.addEventListener("mouseup", function(e){
+            mouse.x = e.pageX - this.offsetLeft;
+            mouse.y = e.pageY - this.offsetTop;
+            drawstart = false;
+            cnvs.stroke();
+            cnvs.closePath();
+        })
+        
+    </script>
+    <input type="text" id="UserInput">
+    <button id="button1">Сменить толщину линии</button>
+</body>
+</html>
