@@ -1,0 +1,40 @@
+<div id="div1">
+    <input type="text" id="UserInput">
+    <button id="button1">Введите степень треугольника</button>
+<script>
+    button1.onclick = function func()
+    {
+        div2.innerHTML=''
+    let n = document.getElementById("UserInput").value;
+    let cLine
+    let allLines =''
+
+    for ( let y = 0; y < +n; y++)
+        {
+            let c = 1;
+            cLine = "1"
+            let divv = document.createElement('div')
+
+            for (let q = 0; q < +n - y; q++)
+                {
+                    cLine="  "+cLine
+                }
+            for (let x = 0; x <= y; x++)
+            {
+                c = c * (y - x) / (x + 1);
+                if (c !=0)
+                {
+                    cLine =cLine+ ` ${c}`
+                }
+            }
+            allLines = allLines+`\n${cLine}`
+            divv.innerHTML=`${cLine}`;
+            div2.append(divv)
+        }
+
+        
+    }
+
+</script>
+<p1 id="div2" name="name"></p1>
+</div>

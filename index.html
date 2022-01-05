@@ -5,82 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pascal Triangle</title>
     <style>
-        P{
-            background-color: brown;
-            text-align:center;
-            font-size: 3ch;
+        body{
+            /* background-image: url(https://sun9-84.userapi.com/impf/c639128/v639128961/2df53/3NZZAEwJDNo.jpg?size=1250x800&quality=96&sign=816f10936db412fbf2f0b580073368be&type=album); */
+            background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614521309_165-p-foni-beloe-na-belom-luchshee-206.jpg);
+            
+            font-size: 30;
+            background-size:cover;
         }
-        H1{
-font-size: 6ch;
-background-color: yellow;
-font-style:italic;
-color:blue;
+        ul{
+          font: 900;
+          padding-left: 50px;
+          color: aquamarine;  
         }
-        #div2 {
-font-size: 3ch;
-background-color: cornflowerblue;
-font-style: italic;
+        li{
+            width: 500px;
+            font: 900;
+            font-style: italic;
         }
+        h1{
+            font:oblique;
+            font-size: 100;
+            color:bisque;
+            text-align: center;
+            background-color:cadetblue;
+        }
+        p{
+            font-size: 32;
+        }
+
     </style>
 </head>
 <body>
-    <h1>Pascal Triangle</h1>
-<div id="div1">
-    <p  class="s1">Текст проверка<br>Проверка разрыва строки<br><i><strong>Жирный курсив</strong><br>Просто курсив</i></p>
-    <input type="text" id="UserInput">
-    <button id="button1">Введите степень треугольника</button>
-    <canvas height='320' width='480' id='pongfield'></canvas>
-    <script>
-        var pongfield = document.getElementById("pongfield"),
-			    ctx     = pongfield.getContext('2d');
-			ctx.height = 480;
-			ctx.width  = 640;
-/* 			ctx.fillStyle = '#000' */
-            /* ctx.fillRect(0,0,640,480) */
-            ctx.fillStyle = "rgv(30,100,200)"
-            ctx.strokeRect(100,100,50,50)
-                for (let x=0;x<1000;x++)
-            {
-                ctx.fillStyle = "rgb(30,100,200)"
-                ctx.fillRect(100+100*Math.sin(x),100+100*Math.cos(x),50,50)
-            }
-    </script>
-<script>
-    button1.onclick = function func()
-    {
-        div2.innerHTML=''
-    let n = document.getElementById("UserInput").value;
-    let cLine
-    let allLines =''
-
-    for ( let y = 0; y < +n; y++)
-        {
-            let c = 1;
-            cLine = "1"
-            let divv = document.createElement('div')
-
-            for (let q = 0; q < +n - y; q++)
-                {
-                    cLine="  "+cLine
-                }
-            for (let x = 0; x <= y; x++)
-            {
-                c = c * (y - x) / (x + 1);
-                if (c !=0)
-                {
-                    cLine =cLine+ ` ${c}`
-                }
-            }
-            allLines = allLines+`\n${cLine}`
-            divv.innerHTML=`${cLine}`;
-            div2.append(divv)
-        }
-
+    <h1>Это я</h1>
+    <p>Меня зовут Марсель Фатхуллин, мне 20 лет, вот мои контакты в социальных сетях:</p>
+    <ul>
+        <li><a href="https://github.com/FMarsM">GitHub</a></li>
+        <li><a href="https://kazan.hh.ru/resume/d3c9c6f1ff0965d2630039ed1f5a434c55445a">HeadHunter</a></li>
+        <li><a href="https://vk.com/mapc116">ВКонтакте</a></li>
+        <li><a href="https://www.instagram.com/leviy_4el/">Instagram</a></li>
         
-    }
+    </ul>
 
-</script>
-<p1 id="div2" name="name"></p1>
-</div>
 </body>
 </html>
