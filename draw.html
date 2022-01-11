@@ -7,14 +7,24 @@
 </head>
 <body>
     <canvas width = "1920" height = "1080" id="draw"></canvas>
+    <input type="text" id="UserInput">
+    <button id="button1">Сменить толщину линии</button>
+    <button id="button2">Сменить цвет линии</button>
     <script>
         let canvas = document.getElementById("draw")
         cnvs = canvas.getContext('2d');
         let drawstart = false;
         let mouse =  {x:0,y:0};
-/*         let n = document.getElementById("UserInput").value; */
-         cnvs.lineWidth = 15;
-/*          cnvs.lineWidth = n; */
+        button1.onclick = function() {
+        let n = document.getElementById("UserInput").value;
+        if (n==undefined || n==0)
+        {
+            cnvs.lineWidth = 10; 
+        }
+        else{
+            cnvs.lineWidth = n;
+        }
+    }
         canvas.addEventListener("mousedown", function(e)
         {
             mouse.x = e.pageX - this.offsetLeft;
@@ -40,7 +50,5 @@
         })
         
     </script>
-    <input type="text" id="UserInput">
-    <button id="button1">Сменить толщину линии</button>
 </body>
 </html>
